@@ -1,8 +1,10 @@
-class CreateIdeaBoards < ActiveRecord::Migration
+class CreateIdeaBoards < ActiveRecord::Migration[4.2]
     def change
-        t.string :name
-        t.integer :trip_id
+        create_table :idea_boards do |t|
+            t.string :name
+            t.integer :trip_id
 
-        t.timestamp null: false
+            t.timestamps null: false
+        end
     end
 end

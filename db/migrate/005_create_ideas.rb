@@ -1,11 +1,11 @@
-class CreateIdeas < ActiveRecord::Migration
+class CreateIdeas < ActiveRecord::Migration[4.2]
     def change
         create_table :ideas do |t|
             t.string :title
             t.text :about
-            t.currency :price # Check if double or float
+            t.float :price # Check if double or float
 
-            t.timestamp null: false
+            t.timestamps null: false
         end
     end
 end
