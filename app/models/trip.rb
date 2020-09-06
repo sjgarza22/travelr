@@ -5,4 +5,5 @@ class Trip < ActiveRecord::Base
     validates :title, presence: true
 
     # Add accepts_nested_attributes for :trip_user(s)
+    accepts_nested_attributes_for :trip_users
 end
