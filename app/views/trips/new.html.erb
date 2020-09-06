@@ -5,7 +5,12 @@
                 <h1>New Trip Form</h1>
             </div>
             <div class="d-flex justify-content-center">
-                
+                <%= form_for @trip do |f| %>
+                    <%= f.label :title %>
+                    <%= f.text_field :title %><br>
+
+                    <%= f.submit %>
+                <% end %>
             </div>
         </div>
     </div>
