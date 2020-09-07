@@ -9,4 +9,17 @@ class TripsController < ApplicationController
     def create
 
     end
+
+    private
+
+    def trip_params
+        model_params(
+            :trip,
+            :title,
+            trip_users_attributes: [
+                :user_id,
+                :user_type
+            ]
+        )
+    end
 end
