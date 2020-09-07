@@ -7,7 +7,11 @@ class TripsController < ApplicationController
     end
 
     def create
+        @trip = Trip.new(trip_params)
 
+        if @trip.save
+            redirect_to trip_path(@trip)
+        end
     end
 
     private
