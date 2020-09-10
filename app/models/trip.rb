@@ -8,6 +8,8 @@ class Trip < ActiveRecord::Base
     # Add accepts_nested_attributes for :trip_user(s)
     accepts_nested_attributes_for :trip_users
 
+    # Add setter method for trip_users attributes
+
     def user_type_selections
         user_types = ['Administrator', 'Contributer']
     end
