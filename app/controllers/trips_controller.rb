@@ -1,4 +1,9 @@
 class TripsController < ApplicationController
+
+    def index
+        @trips = Trip.all
+    end
+    
     def new
         @trip = Trip.new
         @trip.trip_users.build(user_type: 'contributer')
