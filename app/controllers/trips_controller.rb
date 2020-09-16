@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
 
     def index
-        @trips = Trip.all
+        @trips = current_user.trips
     end
     
     def new
@@ -9,12 +9,14 @@ class TripsController < ApplicationController
         @trip.trip_users.build(user_type: 'contributer')
         @trip.trip_users.build(user_type: 'contributer')
         @trip.trip_users.build(user_type: 'contributer')
+        @trip.build_idea_board(name: 'Idea Board')
     end
 
     def create
         @trip = Trip.new(trip_params)
 
         if @trip.save
+            @trip.trip_users.build(user_id: current_user, trip_id: @trip.id, user_type: 'administrator')
             redirect_to trip_path(@trip)
         end
     end
@@ -32,6 +34,9 @@ class TripsController < ApplicationController
             trip_users_attributes: [
                 :user_id,
                 :user_type
+            ],
+            idea_board_attributes: [
+                :name
             ]
         )
     end
