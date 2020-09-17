@@ -4,4 +4,9 @@
             <h1><%= @trip.title %></h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md pt-3 pb-3">
+            <%= link_to @trip.idea_board.name, idea_board_path(@trip.idea_board) %>
+        </div>
+    </div>
 </div>
