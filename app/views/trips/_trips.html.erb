@@ -1,5 +1,11 @@
 <% user_trips.each do |trip| %>
-    <div>
-        <h3><%= link_to trip.title, trip_path(trip) %></h3>
+    <div class="col-md-4 col-sm-6 cell-box">
+        <div class="card trip-listings" style="width: 18rem;">
+            <!-- image goes here -->
+            <div class="card-body">
+                <h5 class="card-title"><%= trip.title %></h5>
+                <%= link_to 'View More', trip_path(trip), class: "btn btn-primary"%>
+            </div>
+        </div>
     </div>
 <% end %>
