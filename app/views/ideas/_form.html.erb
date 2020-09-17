@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md pt-3 pb-3 d-flex justify-content-center">
+            <%= form_for(@idea) do |f| %>
+                <%= f.hidden_field :idea_board_id %>
+                <%= f.label 'Title:' %><br>
+                <%= f.text_field :title %><br>
+                <%= f.label 'About:' %><br>
+                <%= f.text_area :about %><br>
+                <%= f.label 'Price:' %><br>
+                <%= f.text_field :price %><br>
+                <%= f.submit %>
+            <% end %>
+        </div>
+    </div>
+</div>
