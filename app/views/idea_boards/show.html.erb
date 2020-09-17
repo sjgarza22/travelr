@@ -1,1 +1,25 @@
 <!-- This view will show all of our Ideas and give use the option to create a new Idea -->
+<div class="container">
+    <% if @idea_board.ideas.blank? %>
+        <div class="row">
+            <p>It doesn't look like you have any ideas yet.</p>
+            <p>Let's Create One!</p>
+            <button><%= link_to 'New idea', new_idea_board_idea_path(@idea_board) %></button>
+    <% else %>
+        <div class="row">
+            
+            <% @idea_board.ideas.each do |idea| %>
+                <div class="col-md-4 col-sm-6 cell-box">
+                    <div class="card idea-listings" style="width: 18rem;">
+                        <!-- image goes here -->
+                        <div class="card-body">
+                            <h5 class="card-title"><%= idea.title %></h5>
+                            <p class="card-text"><%= idea.about %></p>
+                            <%= link_to 'View More', idea_path(idea), class: "btn btn-primary"%>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>
