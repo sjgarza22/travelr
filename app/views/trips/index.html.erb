@@ -1,7 +1,6 @@
 
-<div class="containter">
-    
-        <% if @trips.empty? %>
+<div class="container">  
+    <% if @trips.empty? %>
         <div class="row">
             <div class="col-md pt-3 d-flex justify-content-center">
                 <p>You don't have any trips yet!</p>
@@ -12,7 +11,9 @@
                 <button><%= link_to 'Create New Trip', new_trip_path %></button>
             </div>
         </div>
-        <% else %>
+    <% else %>
+        <div class="row">
             <%= render partial: "trips", locals: {user_trips: @trips} %>
-        <% end %>
+        </div>
+    <% end %>
 </div>
