@@ -16,7 +16,8 @@ class TripsController < ApplicationController
         @trip = Trip.new(trip_params)
 
         if @trip.save
-            @trip.trip_users.build(user_id: current_user, trip_id: @trip.id, user_type: 'administrator')
+            trip_usr_admin = @trip.trip_users.build(user_id: current_user.id, user_type: 'Administrator')
+            trip_usr_admin.save
             redirect_to trip_path(@trip)
         end
     end
