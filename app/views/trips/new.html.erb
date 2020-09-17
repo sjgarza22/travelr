@@ -10,10 +10,14 @@
                     <%= f.text_field :title %><br>
 
                     <%= f.fields_for :trip_users do |trip_usr| %>
-                        <%= trip_usr.label :user_id, 'Email:'%>
+                        <%= trip_usr.label 'Email:'%>
                         <%= trip_usr.text_field :user_id %>
 
                         <%= trip_usr.hidden_field :user_type, :value => 'Contributer' %><br>
+                    <% end %>
+
+                    <%= f.fields_for :idea_board do |idea_b| %>
+                        <%= idea_b.hidden_field :name %>
                     <% end %>
 
                     <%= f.submit %>
