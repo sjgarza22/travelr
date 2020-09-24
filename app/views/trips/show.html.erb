@@ -1,4 +1,7 @@
-<div class="containter">
+<div class="container">
+    <div class="row">
+        <%= render partial: 'navibar', locals: { trip: @trip } %>
+    </div>
     <div class="row">
         <div class="col-md pt-3 pb-3">
             <h1><%= @trip.title %></h1>
