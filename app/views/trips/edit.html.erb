@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md pt-3 pb-3">
+            <div class="d-flex justify-content-center">
+                <h1>Trip Settings</h1>
+            </div>
+            <div class="d-flex justify-content-center">
+                <%= form_for @trip do |f| %>
+                    <%= f.label :title %><br>
+                    <%= f.text_field :title %><br><br>
+
+                    <%= f.fields_for :idea_board do |idea_b| %>
+                        <%= idea_b.label :name %><br>
+                        <%= idea_b.text_field :name %><br><br>
+                    <% end %>
+
+                    <%= f.submit %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
