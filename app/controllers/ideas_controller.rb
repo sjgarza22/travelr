@@ -11,6 +11,10 @@ class IdeasController < ApplicationController
         end
     end
 
+    def show
+        @idea = Idea.find_by_id(params[:id])
+    end
+
     private
 
     def ideas_params
