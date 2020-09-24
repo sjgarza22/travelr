@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :ideas
+
+  resources :trip_users, only: [:new]
 end
